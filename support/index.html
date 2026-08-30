@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サポート・お問い合わせ - SugieTechLab</title>
+  <meta name="description" content="SugieTechLabが提供するアプリケーションに関するお問い合わせ・サポート窓口です。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://takashisugie.github.io/store/support/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Noto Serif JP', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', serif;
+      background-color: #00093B;
+      color: #CBD5E1;
+      line-height: 1.8;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== Decorative Background ===== */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(ellipse 600px 400px at 15% 20%, rgba(197, 179, 142, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 500px at 85% 70%, rgba(197, 179, 142, 0.03) 0%, transparent 70%),
+        radial-gradient(ellipse 300px 300px at 50% 50%, rgba(197, 179, 142, 0.02) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== Layout Container ===== */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 40px 18px 60px;
+      }
+    }
+
+    /* ===== Header ===== */
+    .page-header {
+      text-align: center;
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(197, 179, 142, 0.2);
+    }
+
+    .page-header__brand {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(197, 179, 142, 0.6);
+      margin-bottom: 16px;
+    }
+
+    .page-header__title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #C5B38E;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+    }
+
+    @media (min-width: 481px) {
+      .page-header__title {
+        font-size: 2rem;
+      }
+    }
+
+    .page-header__ornament {
+      display: block;
+      margin: 20px auto 0;
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #C5B38E, transparent);
+    }
+
+    /* ===== Sections ===== */
+    .section {
+      margin-bottom: 48px;
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.05s; }
+    .section:nth-child(3) { animation-delay: 0.10s; }
+    .section:nth-child(4) { animation-delay: 0.15s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section__heading {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #C5B38E;
+      margin-bottom: 16px;
+      padding-left: 16px;
+      position: relative;
+      letter-spacing: 0.04em;
+    }
+
+    .section__heading::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 3px;
+      background: linear-gradient(180deg, #C5B38E, rgba(197, 179, 142, 0.3));
+      border-radius: 2px;
+    }
+
+    .section__body {
+      font-size: 0.925rem;
+      color: #CBD5E1;
+    }
+
+    .section__body p {
+      margin-bottom: 14px;
+    }
+
+    .section__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== Lists ===== */
+    .section__body ul {
+      margin: 12px 0 14px 0;
+      padding-left: 1.5em;
+    }
+
+    .section__body li {
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+
+    .section__body li::marker {
+      color: rgba(197, 179, 142, 0.5);
+    }
+
+    /* ===== Contact Block ===== */
+    .contact-block {
+      margin-top: 16px;
+      padding: 28px 24px;
+      background: rgba(197, 179, 142, 0.04);
+      border: 1px solid rgba(197, 179, 142, 0.12);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .contact-block__label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(197, 179, 142, 0.6);
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .contact-block__email {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .contact-block__note {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: rgba(203, 213, 225, 0.5);
+      line-height: 1.7;
+    }
+
+    /* ===== Links ===== */
+    a {
+      color: #C5B38E;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(197, 179, 142, 0.3);
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    a:hover {
+      color: #d4c6a3;
+      border-bottom-color: #C5B38E;
+    }
+
+    /* ===== Navigation Link ===== */
+    .nav-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: rgba(197, 179, 142, 0.6);
+      border-bottom: 1px solid rgba(197, 179, 142, 0.15);
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #C5B38E;
+      border-bottom-color: rgba(197, 179, 142, 0.5);
+    }
+
+    /* ===== Footer ===== */
+    .page-footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(197, 179, 142, 0.15);
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(203, 213, 225, 0.3);
+      letter-spacing: 0.03em;
+    }
+
+    /* ===== Print Styles ===== */
+    @media print {
+      body {
+        background: #fff;
+        color: #1a1a1a;
+      }
+      .page-header__title,
+      .section__heading {
+        color: #333;
+      }
+      a {
+        color: #333;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- Header -->
+    <header class="page-header">
+      <span class="page-header__brand">SugieTechLab</span>
+      <h1 class="page-header__title">サポート・お問い合わせ</h1>
+      <span class="page-header__ornament"></span>
+    </header>
+
+    <!-- 概要 -->
+    <section class="section" id="overview">
+      <h2 class="section__heading">お問い合わせについて</h2>
+      <div class="section__body">
+        <p>
+          当方が提供するアプリケーションに関するご質問、不具合のご報告、その他のお問い合わせは、下記のメールアドレスまでご連絡ください。
+        </p>
+      </div>
+    </section>
+
+    <!-- お問い合わせ先 -->
+    <section class="section" id="contact">
+      <h2 class="section__heading">お問い合わせ窓口</h2>
+      <div class="section__body">
+        <div class="contact-block">
+          <div class="contact-block__label">EMAIL</div>
+          <div class="contact-block__email">
+            <a href="mailto:develop.sugie@gmail.com">develop.sugie@gmail.com</a>
+          </div>
+          <div class="contact-block__note">
+            ※ お問い合わせの際は、ご利用の「アプリ名」と「OSバージョン」をご記載いただくとスムーズです。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ご記載いただきたい情報 -->
+    <section class="section" id="information">
+      <h2 class="section__heading">ご記載いただきたい情報</h2>
+      <div class="section__body">
+        <p>
+          お問い合わせいただく際、以下の情報をあわせてご記載いただけますと、より迅速な対応が可能です。
+        </p>
+        <ul>
+          <li>ご利用のアプリ名・バージョン</li>
+          <li>ご利用の端末名・OSバージョン</li>
+          <li>不具合の場合、発生した状況の詳細・再現手順</li>
+          <li>スクリーンショット（可能であれば）</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- リンク -->
+    <section class="section" id="links">
+      <h2 class="section__heading">関連ページ</h2>
+      <div class="section__body">
+        <p>
+          <a class="nav-link" href="../privacy-policy/">プライバシーポリシー →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+      &copy; 2026 SugieTechLab. All rights reserved.
+    </footer>
+
+  </main>
+
+</body>
+</html>
